@@ -9,8 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            
+            VStack {
+                Rectangle()
+                    .frame(width: 200, height: 150)
+                    .foregroundColor(colorScheme == .dark ? .blue : .red)
+                    .cornerRadius(20)
+            }
+            
+            .navigationBarTitle("Color Scheme")
+        }
     }
 }
 
